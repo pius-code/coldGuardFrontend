@@ -37,9 +37,9 @@ A user can ask for a recurring or future action (e.g. "send me a report every ni
 
 All inference goes through a single OpenAI-compatible client pointed at Alibaba Cloud's DashScope endpoint ([core/groq.ts](core/groq.ts)):
 
-| Model | Used for |
-|---|---|
-| `qwen3.5-flash` | Main conversational agent |
+| Model           | Used for                                                    |
+| --------------- | ----------------------------------------------------------- |
+| `qwen3.5-flash` | Main conversational agent                                   |
 | `qwen3.6-flash` | Scheduled/background agent runs, conversation summarization |
 
 Set `QWEN_API_KEY` in your `.env` to authenticate.
@@ -58,12 +58,12 @@ npm install
 
 Copy `.env.example` to `.env` and fill in:
 
-| Variable | Purpose |
-|---|---|
-| `QWEN_API_KEY` | Alibaba Cloud DashScope API key |
-| `MCP_URL` | URL of your ColdGuard MCP server |
-| `REDIS_URL_LOCAL` / `REDIS_URL` | Redis instance for conversation history |
-| `ALLOWED_NUMBER` | The only WhatsApp ID the bot will respond to |
+| Variable                        | Purpose                                      |
+| ------------------------------- | -------------------------------------------- |
+| `QWEN_API_KEY`                  | Alibaba Cloud DashScope API key              |
+| `MCP_URL`                       | URL of your ColdGuard MCP server             |
+| `REDIS_URL_LOCAL` / `REDIS_URL` | Redis instance for conversation history      |
+| `ALLOWED_NUMBER`                | The only WhatsApp ID the bot will respond to |
 
 ### 3. Find your WhatsApp ID
 
@@ -88,6 +88,4 @@ The agent's knowledge of what's "safe" for the currently-monitored drug/vaccine 
 ## Notes & limitations
 
 - Uses `whatsapp-web.js`, an unofficial WhatsApp Web client — suitable for a demo/hackathon deployment, not a production messaging channel.
-- Only one allowed number is supported at a time; there's no multi-tenant user management yet.
 - Scheduled jobs are in-memory and don't survive a restart.
-- Media (images/audio) input is not yet supported.
