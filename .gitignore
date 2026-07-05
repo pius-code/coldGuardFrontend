@@ -1,0 +1,6 @@
+.wwebjs_auth
+.env
+node_modules
+.wwebjs_cache
+.claude
+data/
