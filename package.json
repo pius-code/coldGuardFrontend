@@ -9,7 +9,7 @@
     "build": "tsc && chmod 755 build/main.ts"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
